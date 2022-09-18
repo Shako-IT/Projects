@@ -1,0 +1,31 @@
+body {
+  background-image: url("https://www.elsevier.com/__data/assets/image/0011/997553/Laptop-iStock.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.9;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+#title {
+  text-align: center;
+  color: rgba(9, 75, 36, 0.74);
+}
+#survey-form {
+  border-radius: 5%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  min-width: fit-content;
+  background-color: gray;
+  padding: 20px;
+}
+.pinfo {
+  display: block;
+  width: 100%;
+}
+#description {
+  font-family: sylfaen;
+  font-size: 16px;
+}

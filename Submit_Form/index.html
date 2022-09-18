@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit Form</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="title">Survey Form</h1>
+    </header>
+    <form id="survey-form">
+      <!-- Pesonal information input: first name and last name; Address -->
+      <div class="pinfo">
+        <!-- First name input -->
+        <label for="fname" id="fname-label">First name</label><br />
+        <input
+          type="text"
+          id="fname"
+          name="firstname"
+          placeholder="Enter your first name"
+          required
+        /><br />
+
+        <!-- Last name input -->
+        <label for="lname" id="lname-label">Last name</label><br />
+        <input
+          type="text"
+          id="lname"
+          name="lastname"
+          placeholder="Enter your Last name"
+          required
+        />
+      </div>
+
+      <!-- Address input -->
+      <label for="user_address" id="address-label">Address</label><br />
+      <input
+        type="text"
+        id="user_address"
+        name="address"
+        maxlength="35"
+        placeholder="Enter your address"
+        required
+      /><br />
+
+      <!-- Callendar input: Date of Birth, optional -->
+      <label for="birthday" id="birthday-label">Date of Birth</label><br />
+      <input
+        type="date"
+        id="birthday"
+        name="birthday"
+        style="width: 170px"
+      /><br />
+
+      <!-- Choosing a gender, optional -->
+      <label for="role">What gender are you?</label><br />
+      <select id="dropdown" name="gender" style="width: 170px">
+        <option disabled selected value>Select your gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option></select
+      ><br />
+
+      <!-- User notes, optional -->
+      <p id="description">Notes</p>
+      <textarea name="message" rows="10" cols="30"></textarea>
+      <br />
+      <button id="submit">Submit</button>
+    </form>
+  </body>
+</html>
