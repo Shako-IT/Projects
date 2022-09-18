@@ -1,1 +1,3 @@
-# Projects
+- 👋 Hi, I’m Shako
+- 👀 I’m interested in software development
+- 🌱 I’m currently learning Front end development
