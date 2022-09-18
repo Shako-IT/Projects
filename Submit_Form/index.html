@@ -6,68 +6,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Submit Form</title>
     <link rel="stylesheet" href="main.css" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="script.js"></script>
   </head>
   <body>
-    <header>
-      <h1 id="title">Survey Form</h1>
-    </header>
-    <form id="survey-form">
-      <!-- Pesonal information input: first name and last name; Address -->
-      <div class="pinfo">
-        <!-- First name input -->
-        <label for="fname" id="fname-label">First name</label><br />
-        <input
-          type="text"
-          id="fname"
-          name="firstname"
-          placeholder="Enter your first name"
-          required
-        /><br />
-
-        <!-- Last name input -->
-        <label for="lname" id="lname-label">Last name</label><br />
-        <input
-          type="text"
-          id="lname"
-          name="lastname"
-          placeholder="Enter your Last name"
-          required
-        />
+    <div class="modal" tabindex="-1" id="modal1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Note</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p id="noteText"></p>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <!-- Address input -->
-      <label for="user_address" id="address-label">Address</label><br />
-      <input
-        type="text"
-        id="user_address"
-        name="address"
-        maxlength="35"
-        placeholder="Enter your address"
-        required
-      /><br />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <header>
+            <h1 id="title">Survey Form</h1>
+          </header>
+          <form id="survey-form">
+            <!-- Pesonal information input: first name and last name; Address -->
+            <div class="pinfo">
+              <!-- First name input -->
+              <label for="fname" id="fname-label" class="form-label"
+                >First name (required)</label
+              ><br />
+              <input
+                type="text"
+                id="fname"
+                name="firstname"
+                placeholder="Enter your first name"
+                class="form-control"
+                required
+              /><br />
 
-      <!-- Callendar input: Date of Birth, optional -->
-      <label for="birthday" id="birthday-label">Date of Birth</label><br />
-      <input
-        type="date"
-        id="birthday"
-        name="birthday"
-        style="width: 170px"
-      /><br />
+              <!-- Last name input -->
+              <label for="lname" id="lname-label" class="form-label"
+                >Last name (required)</label
+              ><br />
+              <input
+                type="text"
+                id="lname"
+                name="lastname"
+                placeholder="Enter your Last name"
+                class="form-control"
+                required
+              />
+            </div>
 
-      <!-- Choosing a gender, optional -->
-      <label for="role">What gender are you?</label><br />
-      <select id="dropdown" name="gender" style="width: 170px">
-        <option disabled selected value>Select your gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option></select
-      ><br />
+            <!-- Address input -->
+            <label for="user_address" id="address-label" class="form-label"
+              >Address (required)</label
+            ><br />
+            <input
+              type="text"
+              id="user_address"
+              name="address"
+              maxlength="35"
+              placeholder="Enter your address"
+              class="form-control"
+              required
+            /><br />
 
-      <!-- User notes, optional -->
-      <p id="description">Notes</p>
-      <textarea name="message" rows="10" cols="30"></textarea>
-      <br />
-      <button id="submit">Submit</button>
-    </form>
+            <!-- Callendar input: Date of Birth, optional -->
+            <label for="birthday" id="birthday-label" class="form-label"
+              >Date of Birth (optional)</label
+            ><br />
+            <input
+              type="date"
+              id="birthday"
+              name="birthday"
+              style="width: 170px"
+              class="form-control"
+            /><br />
+
+            <!-- Choosing a gender, optional -->
+            <label for="role" class="form-label"
+              >What gender are you? (optional)</label
+            ><br />
+            <select
+              id="dropdown"
+              name="gender"
+              style="width: 170px"
+              class="form-control"
+            >
+              <option disabled selected value>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option></select
+            ><br />
+
+            <!-- User notes, optional -->
+            <p id="description">Notes (optional)</p>
+            <textarea
+              id="usernote"
+              name="message"
+              rows="5"
+              cols="30"
+              class="form-control"
+            ></textarea>
+            <br />
+            <button id="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <!-- Output result in table -->
+          <table id="table-form" class="table table-striped">
+            <tr id="table-list">
+              <th>ID</th>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Address</th>
+              <th>Date</th>
+              <th>Gender</th>
+              <th>Delete</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
